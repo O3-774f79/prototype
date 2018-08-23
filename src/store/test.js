@@ -2,11 +2,14 @@ import { observable, action, toJS } from "mobx";
 
 export default new class Test {
   @observable
-  testWord = "1";
-
+  searchText;
+  @observable
+  pushValue = 1;
   @action
-  resetTest = () => {
-    console.log(this.testWord);
-    this.testWord == "2";
+  setSearchText = searchText => {
+    this.searchText = searchText;
+  };
+  enterValue = s => {
+    this.pushValue = s;
   };
 }();
